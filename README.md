@@ -5,9 +5,9 @@ Sistema para un banco en C++
 - TxDB.txt y UserDB.txt en './db/'
 
 > Run main.cpp
-´´´sh
+```sh
 g++ main.cpp
-´´´
+```
 
 > Run in powershell
 ```sh
