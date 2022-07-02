@@ -1,15 +1,29 @@
 # C++ Bank
+### v1.2
 Sistema para un banco en C++
 
-## Requerimientos
-- TxDB.txt y UserDB.txt en './db/'
+## Features
+  - [x] Sistema de Menus
+  - [x] Crear/Ver/Borrar Usuario
+  - [ ] Crear/Ver/Borrar Transacciones
+  - [ ] Modificar Balances
+  - More...
 
-> Run main.cpp
+## Requerimientos
+  - './db/TxDB.txt' 
+  - './db/UserDB.txt'
+
+> Build main.cpp
 ```sh
 g++ main.cpp
 ```
 
-> Run in powershell
+> Run a.exe
+```sh
+a.exe
+```
+
+> Build & run in powershell
 ```sh
 .\cmd\.ps1
 ```

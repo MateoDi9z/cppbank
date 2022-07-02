@@ -11,7 +11,7 @@ public:
 	User(int id, string fullname)
 	{
 		this->id = id;
-		this->balance = 0;
+		this->balance = 0.00;
 		this->fullname = fullname;
 	}
 

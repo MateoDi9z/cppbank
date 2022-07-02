@@ -1,12 +1,24 @@
 #include <string>
 #include <iostream>
+#include <ctime>
+#include <sstream>
+#include <windows.h>
 
 using namespace std;
 
-string divr = " ----------------------------------- ";
+const string divr = " ----------------------------------- ";
 
-//? MENU Generator
-int MenuGenerator(string title, string subtitle, string param[10], int cant, bool back)
+/* 
+*   Generador de Menu
+*   @param title Titulo del menu
+*   @param subtitle Subtitulo del menu
+*   @param param Array de strings con opciones a mostrar en el Menu
+*   @param cant Cantidad de opciones a mostrar en el Menu
+*   @param back Si es true muestra opcion adicional para volver al menu anterior
+*   @return Opcion - Indice de opcion en array de opciones
+*   @since v1.0
+*/
+int MenuGenerator(string title, string subtitle, string param[], int cant, bool back)
 {
     cout << " " << title << endl;
     cout << divr << endl;
@@ -29,14 +41,22 @@ int MenuGenerator(string title, string subtitle, string param[10], int cant, boo
     return temp;
 }
 
-//? Clear
+/* 
+*   Limpia la consola
+*   @return void
+*   @since v1.0
+*/
 void clear()
-{ //* system("@cls||clear")
+{
     system("@cls||clear");
     cout << divr << endl;
 }
 
-//? Continue
+/* 
+*   Pregunta y cierra el programa si es deseado
+*   @return void
+*   @since v1.0
+*/
 void askToCLose()
 {
     string res;
@@ -55,6 +75,7 @@ void askToCLose()
 *   @return Confirmar 
 *   1 = SI,
 *   0 = NO
+*   @since v1.0
 */
 int confirm()
 {
@@ -69,4 +90,21 @@ int confirm()
     }
     printf("Success! \n");
     return 1;
+}
+
+/*
+*   Esperar
+*   @param ms Tiempo a esperar (Milisegundos)
+*   @return void
+*/
+void delay(int ms) {
+    Sleep(ms);
+}
+
+/*
+*   Print - para debug :)
+*   @param x Mensaje
+*/
+void print(auto x) {
+    cout << x << endl;
 }

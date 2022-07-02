@@ -1,7 +1,7 @@
 Clear-Host
 
-$userdb = "..\db\UserDB.txt"
-$exe = "..\a.exe"
+$userdb = ".\db\UserDB.txt"
+$exe = ".\a.exe"
 
 if (-Not (Test-Path $userdb)) {
     New-Item -Path $userdb -ItemType File   

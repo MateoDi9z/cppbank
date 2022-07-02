@@ -1,7 +1,7 @@
 Clear-Host
 
-$txdb = "..\db\TxDB.txt"
-$exe = "..\a.exe"
+$txdb = ".\db\TxDB.txt"
+$exe = ".\a.exe"
 
 if (-Not (Test-Path $txdb)) {
     New-Item -Path $txdb -ItemType File   

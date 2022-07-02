@@ -1,34 +1,27 @@
 /*
 	C++ Bank
-	v1.1
+	v1.2
 */
 
 //? Macros
-#define MENU_USER 1
-#define MENU_TX 2
-#define DBUSER "./db/UserDB.txt"
-#define DBTX "./db/TxDB.txt"
-#define USERNEW 1
-#define USERSHOW 2
-#define USERDEL 3
-#define TXNEW 1
-#define TXSHOW 2
-#define TXDEL 3
+#include "macros.cpp"
 
 //? Includes
-#include <iostream>
-#include <ctime>
+#include <chrono>
+#include <thread>
 #include "utils.h"
 #include "protos.cpp"
 
 int USERN = 1;
+int TXN = 1;
 
 //? Classes
 #include "./classes/User.cpp"
 #include "./classes/Tx.cpp"
 #include "./classes/FileManager.cpp"
 
-/// RUN COMMAND:  .\cmd\.ps1
+/// BUILD & RUN COMMAND:  .\cmd\.ps1
+/// RUN COMMAND a.exe
 
 void newUser(void)
 {
@@ -46,6 +39,7 @@ void newUser(void)
 
 	clear();
 	cout << "Estas por agregar este usuario:" << endl;
+	temp.printUser();
 
 	int res = confirm();
 	string ras;
@@ -62,10 +56,15 @@ void showUsers(void)
 	askToCLose();
 }
 
-void deleteUser(void) {
-	cout << " Buscar usuario:" << endl;
+void deleteUser(void)
+{
+	clear();
+	string a;
+	cout << " ID de usuario a borrar: " << endl;
 	cin >> a;
-	cout << a << endl;
+	DeleteLineDB(DBUSER, a);
+	cout << "Usuario con ID " << a << " eliminado!" << endl;
+	delay(2000);
 }
 
 void UserMenu(void)
@@ -89,6 +88,9 @@ void UserMenu(void)
 		case USERDEL:
 			deleteUser();
 			break;
+		case USERBACK:
+			user = false;
+			break;
 		default:
 			askToCLose();
 			user = false;
@@ -104,8 +106,8 @@ void TxMenu(void)
 	while (tx)
 	{
 		clear();
-		string p[] = {"Add Tx", "Delete Tx"};
-		int opt = MenuGenerator("Transactions Actions", "OPTIONS:", p, 2, true);
+		string p[] = {"Add Tx", "Show Txs", "Delete Tx"};
+		int opt = MenuGenerator("Transactions Actions", "OPTIONS:", p, 3, true);
 
 		switch (opt)
 		{
@@ -114,6 +116,9 @@ void TxMenu(void)
 		case TXSHOW:
 			break;
 		case TXDEL:
+			break;
+		case TXBACK:
+			tx = false;
 			break;
 		default:
 			askToCLose();
@@ -126,6 +131,9 @@ void TxMenu(void)
 //* MAIN
 int main(int argc, char *argv[])
 {
+	if (ChecksDB())
+		return 1;
+
 	while (1)
 	{
 		clear();
