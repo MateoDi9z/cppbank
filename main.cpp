@@ -107,7 +107,7 @@ void TxMenu(void)
 	{
 		clear();
 		string p[] = {"Add Tx", "Show Txs", "Delete Tx"};
-		int opt = MenuGenerator("Transactions Actions", "OPTIONS:", p, 3, true);
+		int opt = MenuGenerator("Transactions Actions - COMING SOON...", "OPTIONS:", p, 3, true);
 
 		switch (opt)
 		{

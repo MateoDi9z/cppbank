@@ -6,6 +6,7 @@ Sistema para un banco en C++
   - [x] Sistema de Menus
   - [x] Crear/Ver/Borrar Usuario
   - [ ] Crear/Ver/Borrar Transacciones
+  - [ ] Calcular balances en base a Transacciones
   - [ ] Modificar Balances
   - More...
 

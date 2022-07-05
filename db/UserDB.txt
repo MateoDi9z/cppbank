@@ -1,1 +1,2 @@
-1 dasd sa 0.000000
+1 Mateo Diaz 0.000
+2 Nicolas Formi 69.420

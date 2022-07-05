@@ -36,7 +36,7 @@ void showUsers(void);
 *   @return void
 *   @since v1.2
 */
-void deleteUser(void)
+void deleteUser(void);
 //?   <- User ->
 
 //?   <- Database ->
