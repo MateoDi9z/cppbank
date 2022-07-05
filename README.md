@@ -1,5 +1,5 @@
 # C++ Bank
-### v1.2
+### v1.2.2
 Sistema para un banco en C++
 
 [GitHub Repo](https://github.com/MateoDi9z/cppbank)
